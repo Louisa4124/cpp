@@ -143,8 +143,11 @@ int Contact::set_number(std::string new_number)
     if (new_number.length() == 0)
         return (-1);
     while (i < new_number.size())
+    {
 		if (!isdigit(new_number[i]))
 			return (-1);
+        ++i;
+    }
     if (new_number.length() > 10)
     {
         new_number[9] = '.';

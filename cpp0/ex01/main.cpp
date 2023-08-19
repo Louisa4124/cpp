@@ -19,6 +19,7 @@ int main(void)
 	std::string input;
 	while (input.compare("EXIT") != 0)
 	{
+		std::cout << "> ";
 		getline(std::cin, input);
 		if (input.compare("ADD") == 0)
 			phonebook.add_contact();
