@@ -15,14 +15,17 @@
 int main(void)
 {
 	PhoneBook	phonebook;
+	std::string input = "";
+
 	phonebook.how_to();
-	std::string input;
-	while (input.compare("EXIT") != 0)
+	while (std::cin.good() && input.compare("EXIT") != 0)
 	{
 		std::cout << "> ";
 		getline(std::cin, input);
 		if (input.compare("ADD") == 0)
 			phonebook.add_contact();
+		if (input.compare("SEARCH") == 0)
+			phonebook.search_contact();
 	}
 	return (0);
 }

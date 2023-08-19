@@ -143,3 +143,51 @@ void    PhoneBook::add_contact(void)
     std::cout << "Contact added succesfully ! :)" << std::endl;
     std::cout << std::endl;
 }
+
+void    PhoneBook::display_contact(int i) const
+{
+    if (i == -1)
+    {
+        i = 0;
+        while (i < 8)
+        {
+            std::cout << std::setw(10) << i << "|";
+            std::cout << std::setw(10) << contact[i].get_first_name() << "|";
+            std::cout << std::setw(10) << contact[i].get_last_name() << "|";
+            std::cout << std::setw(10) << contact[i].get_nickname() << std::endl;
+            ++i;
+        }
+    }
+    else
+    {
+        std::cout << "First name : " << contact[i].get_first_name() << std::endl;
+        std::cout << "Last name : " << contact[i].get_last_name() << std::endl;
+        std::cout << "Nickname : " << contact[i].get_nickname() << std::endl;
+        std::cout << "Phone number : " << contact[i].get_number() << std::endl;
+        std::cout << "Darkest secret : " << contact[i].get_secret() << std::endl;
+        std::cout << std::endl;
+    }
+}
+
+void    PhoneBook::search_contact(void) const
+{
+    std::string input = "";
+    int         index = -1;
+
+    display_contact(index);
+    std::cout << "Enter an index value : " << std::endl;
+    while (std::cin.good() && input.length() == 0)
+    {
+        while (index < 0 || index > 7)
+        {
+            std::cout << ">> ";
+            getline(std::cin, input);
+            index = atoi(input.c_str());
+            if (index >= 0 && index <= 7)
+                display_contact(index);
+            else
+                std::cout << "Please enter an index value between 0 and 7" << std::endl;
+        }
+    }
+    std::cin.clear();
+}
