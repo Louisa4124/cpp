@@ -16,5 +16,12 @@ int main(void)
 {
 	PhoneBook	phonebook;
 	phonebook.how_to();
+	std::string input;
+	while (input.compare("EXIT") != 0)
+	{
+		getline(std::cin, input);
+		if (input.compare("ADD") == 0)
+			phonebook.add_contact();
+	}
 	return (0);
 }

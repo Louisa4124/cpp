@@ -19,13 +19,22 @@ class PhoneBook
 {
 	private:
 		Contact	contact[8];
+		int		i;
+
 	public :
 		PhoneBook();
 		~PhoneBook();
+
 		void	how_to(void) const;
-		void	add(void);
-		void	print(void) const;
-		void	search(void) const;
+		void	add_contact(void);
+		void	display_contact(void) const;
+		void	search_contact(void) const;
+
+		int		add_first_name(std::string first_name);
+		int		add_last_name(std::string last_name);
+		int		add_nickname(std::string nickname);
+		int		add_number(std::string number);
+		int		add_secret(std::string secret);
 };
 
 #endif
