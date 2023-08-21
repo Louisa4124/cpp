@@ -6,36 +6,89 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 14:24:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/19 14:35:39 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/08/21 12:37:45 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-Account::Account()
+#include "Account.hpp"
+#include <iostream>
+#include <ctime>
+
+int	Account::_nbAccounts = 0;
+int	Account::_totalAmount = 0;
+int Account::_totalNbDeposits = 0;
+int Account::_totalNbWithdrawals = 0;
+
+Account::Account(int initial_deposit)
 {
+	this->_nbAccounts++;
+	this->_accountIndex = _nbAccounts - 1;
+	this->_amount = initial_deposit;
+	this->_totalAmount += initial_deposit;
+	this->_nbDeposits = 0;
+	this->_nbWithdrawals = 0;
 	return;
 }
 
-Account::~Account()
+Account::~Account( void )
 {
+	_nbAccounts--;
 	return;
 }
 
-static int Account::getNbAccounts() const
+void	Account::_displayTimestamp(void)
 {
-	return (this->_nbAccounts);
+	std::time_t time;
+	char 		str[100];
+
+	std::time(&time);
+	std::strftime(str, 100, "[%Y%m%d_%H%M%S] ", std::localtime(&time));
+	std::cout << str;
 }
 
-static int Account::getTotalAmount() const
+int Account::getNbAccounts(void)
 {
-	return (this->_totalAmount);
+	return (_nbAccounts);
 }
 
-static int Account::getNbDeposits() const
+int Account::getTotalAmount(void)
 {
-	return (this->_nbDeposits);
+	return (_totalAmount);
 }
 
-static int Account::getNbWithdrawals() const
+int Account::getNbDeposits(void)
 {
-	return (this->_nbAccounts);
+	return (_totalNbDeposits);
+}
+
+int Account::getNbWithdrawals(void)
+{
+	return (_totalNbWithdrawals);
+}
+
+
+void	Account::displayAccountsInfos(void)
+{
+	
+}
+
+void	Account::makeDeposit(int deposit)
+{
+	
+}
+
+bool	Account::makeWithdrawal(int withdrawal)
+{
+	
+}
+
+
+int		Account::checkAmount(void) const
+{
+	
+}
+
+void	Account::displayStatus(void) const
+{
+	
 }

@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/19 14:24:48 by lboudjem          #+#    #+#              #
-#    Updated: 2023/08/19 14:26:55 by lboudjem         ###   ########.fr        #
+#    Updated: 2023/08/21 10:51:27 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OBJS	=	$(SRCS:.cpp=.o)
 
 CC		= g++
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= #-Wall -Wextra -Werror
 
 HEADER	= Account.hpp
 
