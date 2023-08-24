@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 14:15:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/23 14:46:31 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/08/23 12:43:50 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/08/23 13:39:14 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-int main(void)
+Zombie* newZombie(std::string name)
 {
-	int N;
+	Zombie* new_zombie = new Zombie;
+	new_zombie->set_name(name);
 
-	N = 5;
-	Zombie *zombie = zombieHorde(N, "michel");
-	for (int i = 0; i < N; i++)
-    	zombie[i].announce();
-    delete[](zombie);
-	return (0);
+	return (new_zombie);
 }

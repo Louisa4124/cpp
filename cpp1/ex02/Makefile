@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/19 14:24:48 by lboudjem          #+#    #+#              #
-#    Updated: 2023/08/23 12:41:55 by lboudjem         ###   ########.fr        #
+#    Created: 2023/08/23 14:48:31 by lboudjem          #+#    #+#              #
+#    Updated: 2023/08/23 14:49:04 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= ex02
 
-NAME	= account
+SRCS	= main.cpp
 
-SRCS	= Account.cpp tests.cpp
-
-OBJS	=	$(SRCS:.cpp=.o)
+OBJS	= $(SRCS:.cpp=.o)
 
 CC		= g++
 
 FLAGS	= -Wall -Wextra -Werror
 
-HEADER	= Account.hpp
+HEADER	= 
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/19 14:24:48 by lboudjem          #+#    #+#              #
-#    Updated: 2023/08/23 12:41:55 by lboudjem         ###   ########.fr        #
+#    Created: 2023/08/23 12:40:17 by lboudjem          #+#    #+#              #
+#    Updated: 2023/08/23 13:07:52 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= zombie
 
-NAME	= account
+SRCS	= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
-SRCS	= Account.cpp tests.cpp
-
-OBJS	=	$(SRCS:.cpp=.o)
+OBJS	= $(SRCS:.cpp=.o)
 
 CC		= g++
 
 FLAGS	= -Wall -Wextra -Werror
 
-HEADER	= Account.hpp
+HEADER	= Zombie.hpp
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

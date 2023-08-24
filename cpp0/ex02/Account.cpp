@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 14:24:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/22 14:18:05 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/08/23 12:18:29 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,12 @@ Account::Account(int initial_deposit)
 
 Account::~Account( void )
 {
-	_nbAccounts--;
-	return;
+	_displayTimestamp();
+	this->_totalAmount -= _amount;
+	this->_nbAccounts--;
+	std::cout << "index:" << this->_accountIndex;
+	std::cout << ";amount:" << this->_amount;
+	std::cout << ";closed" << std::endl;
 }
 
 void	Account::_displayTimestamp(void)
@@ -125,10 +129,15 @@ bool	Account::makeWithdrawal(int withdrawal)
 
 int		Account::checkAmount(void) const
 {
-	return (0);
+	return (_amount);
 }
 
 void	Account::displayStatus(void) const
 {
-	
+	_displayTimestamp();
+	std::cout << "index:" << _accountIndex;
+	std::cout << ";amount:" << _amount;
+	std::cout << ";deposits:" << _nbDeposits;
+	std::cout << ";withdrawals:" << _nbWithdrawals;
+	std::cout << std::endl;
 }

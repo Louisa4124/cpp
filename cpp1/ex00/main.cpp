@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/23 14:15:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/23 14:46:31 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/08/23 12:42:22 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/08/23 13:38:45 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 int main(void)
 {
-	int N;
-
-	N = 5;
-	Zombie *zombie = zombieHorde(N, "michel");
-	for (int i = 0; i < N; i++)
-    	zombie[i].announce();
-    delete[](zombie);
-	return (0);
+    randomChump("alfred");
+    Zombie *zombie = newZombie("michel");
+    zombie->announce();
+    delete(zombie);
+    return (0);
 }
