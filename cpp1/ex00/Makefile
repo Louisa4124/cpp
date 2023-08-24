@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 12:40:17 by lboudjem          #+#    #+#              #
-#    Updated: 2023/08/23 13:07:52 by lboudjem         ###   ########.fr        #
+#    Updated: 2023/08/24 12:05:03 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS	= $(SRCS:.cpp=.o)
 
 CC		= g++
 
-FLAGS	= -Wall -Wextra -Werror
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
 HEADER	= Zombie.hpp
 

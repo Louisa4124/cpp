@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/23 15:07:30 by lboudjem          #+#    #+#              #
-#    Updated: 2023/08/24 12:04:34 by lboudjem         ###   ########.fr        #
+#    Created: 2023/08/24 12:17:49 by lboudjem          #+#    #+#              #
+#    Updated: 2023/08/24 12:18:22 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ex03
+NAME	= ex04
 
-SRCS	= main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS	= main.cpp 
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -20,7 +20,7 @@ CC		= g++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADER	= Weapon.hpp HumanA.hpp HumanB.hpp
+HEADER	= 
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

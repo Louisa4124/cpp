@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:08:48 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/24 10:53:27 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/08/24 11:50:46 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,15 @@
 
 class Weapon
 {
-	private :
-		std::string	type;
-	
-	public :
-		Weapon();
-		~Weapon();
-		
-		std::string&	get_type() const;
-		void			set_type() const;
-}
+	private:
+		std::string type;
 
-#ifndef
+	public:
+		Weapon(const std::string type);
+		~Weapon();
+
+		std::string	getType();
+		void		setType(const std::string type);
+};
+
+#endif
