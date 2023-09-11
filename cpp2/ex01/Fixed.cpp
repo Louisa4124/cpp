@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:40:32 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/09/09 17:24:53 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/11 13:47:35 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ Fixed::Fixed()
 Fixed::Fixed(const int num)
 {
 	std::cout << "Int constructor called" << std::endl;
-	_raw_bits = (num << _nb_bits);
+	this->setRawBits(num << this->_nb_bits);
 }
 
 Fixed::Fixed(const float num)
 {
 	std::cout << "Float constructor called" << std::endl;
-		_raw_bits = static_cast<int>(roundf(num * roundf(_nb_bits)));
+	this->setRawBits(static_cast<int>(roundf(num * (1 << this->_nb_bits))));
 }
 
 Fixed::~Fixed()
@@ -63,12 +63,12 @@ void	Fixed::setRawBits(int const raw)
 
 float	Fixed::toFloat(void) const
 {
-	return (static_cast<float>(_raw_bits) / roundf(this->_nb_bits));
+	return (static_cast<float>(this->_raw_bits) / (1 << this->_nb_bits));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (_raw_bits >> _nb_bits);
+	return (this->_raw_bits >> this->_nb_bits);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& f)
