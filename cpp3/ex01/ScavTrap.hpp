@@ -6,7 +6,7 @@
 /*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:54:46 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/11 16:33:50 by louisa           ###   ########.fr       */
+/*   Updated: 2023/09/11 17:06:38 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class ScavTrap : public ClapTrap
 {
 	private:
-
+		bool	_gateKeeperMode;
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);
@@ -28,6 +28,9 @@ class ScavTrap : public ClapTrap
 		ScavTrap(const ScavTrap& bycopy);
 		
 		ScavTrap& operator=(const ScavTrap& bycopy);
+
+		void	setMode(bool mode);
+		void	getMode(void);
 	
 		void	guardGate(void);
 		void	attack(const std::string& target);

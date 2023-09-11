@@ -6,7 +6,7 @@
 /*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:57:08 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/11 16:28:11 by louisa           ###   ########.fr       */
+/*   Updated: 2023/09/11 16:57:56 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ClapTrap::ClapTrap(void)
 	this->setHitPts(10);
 	this->setEnergyPts(10);
 	this->setAttackPts(0);
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name)
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(std::string name)
 	this->setHitPts(10);
 	this->setEnergyPts(10);
 	this->setAttackPts(0);
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& bycopy)
@@ -36,12 +36,12 @@ ClapTrap::ClapTrap(const ClapTrap& bycopy)
 	this->setHitPts(bycopy.getHitPts());
 	this->setEnergyPts(bycopy.getEnergyPts());
 	this->setAttackPts(bycopy.getAttackPts());
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Default destructor called" << std::endl;
+	std::cout << "ClapTrap default destructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& bycopy)
@@ -50,7 +50,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& bycopy)
 	this->setHitPts(bycopy.getHitPts());
 	this->setEnergyPts(bycopy.getEnergyPts());
 	this->setAttackPts(bycopy.getAttackPts());
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "ClapTrap copy assignment operator called" << std::endl;
 }
 
 std::string	ClapTrap::getName(void) const
