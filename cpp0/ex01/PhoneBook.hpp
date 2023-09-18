@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 22:03:18 by louisa            #+#    #+#             */
-/*   Updated: 2023/08/18 22:24:52 by louisa           ###   ########.fr       */
+/*   Updated: 2023/09/18 13:18:42 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ class PhoneBook
 
 		void	how_to(void) const;
 		void	add_contact(void);
-		void	display_contact(int i) const;
 		void	search_contact(void) const;
+		
+		int		display_contact(int i) const;
 
 		int		add_first_name(std::string first_name);
 		int		add_last_name(std::string last_name);
