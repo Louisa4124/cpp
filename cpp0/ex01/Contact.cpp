@@ -6,13 +6,13 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 21:58:37 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/18 13:36:43 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:06:14 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact() {}
+Contact::Contact() : first_name("") {}
 
 Contact::~Contact() {}
 
@@ -45,7 +45,7 @@ int Contact::set_first_name(std::string new_name)
 {
 	size_t	i;
 
-	i = 0;
+    i = 0;
     if (new_name.length() == 0)
         return (-1);
     while (i < new_name.size())

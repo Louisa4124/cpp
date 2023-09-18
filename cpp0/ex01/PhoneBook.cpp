@@ -6,21 +6,15 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 21:45:41 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/18 13:34:25 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:15:12 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
-{
-	return;
-}
+PhoneBook::PhoneBook() : i(0) {}
 
-PhoneBook::~PhoneBook()
-{
-	return;
-}
+PhoneBook::~PhoneBook() {}
 
 void    PhoneBook::how_to(void) const 
 {
@@ -35,6 +29,8 @@ void    PhoneBook::how_to(void) const
 
 int     PhoneBook::add_first_name(std::string first_name)
 {
+    first_name = "";
+    
     while (std::cin.good() && first_name.length() == 0)
     {
         std::cout << "Enter first name : ";
