@@ -6,21 +6,15 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 21:58:37 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/18 13:36:15 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/18 13:36:43 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact()
-{
-	return;
-}
+Contact::Contact() {}
 
-Contact::~Contact()
-{
-	return;
-}
+Contact::~Contact() {}
 
 std::string Contact::get_first_name() const
 {
