@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 21:45:41 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/18 14:15:12 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/18 14:38:42 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,7 +204,10 @@ void    PhoneBook::search_contact(void) const
                 if (index > 0 && index <= num)
                     display_contact(index - 1);
                 else
+                {
                     std::cout << "Please enter an index value between 1 and " << num << std::endl;
+                    index = -1;
+                }
             }
         }
         std::cin.clear();   
