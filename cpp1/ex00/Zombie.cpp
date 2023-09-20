@@ -6,20 +6,20 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 12:43:15 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/23 13:24:48 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/20 15:11:16 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie() : name("nameless")
 {
-	return;
+	std::cout << "Default Constructor Called "<< std::endl;
 }
 
 Zombie::~Zombie()
 {
-	return;
+	std::cout << "Zombie " << this->name << " is destructed" << std::endl;
 }
 
 std::string	Zombie::get_name() const
