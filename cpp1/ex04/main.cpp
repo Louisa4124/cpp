@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 12:18:31 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/09/21 13:03:49 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:12:45 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int main(int argc, char **argv)
 	
 	if (arg2.length() == 0 || arg3.length() == 0)
 	{
-		std::cout << "Invalid character to find" << std::endl;
+		std::cout << "Invalid character" << std::endl;
 		return (1);
 	}
 	
@@ -64,6 +64,6 @@ int main(int argc, char **argv)
 		std::cout << "Could not find file" << std::endl;
 
 		
-	//ft_replace(ifs, ofs, argv[2], argv[3]);
+	ft_replace(ifs, ofs, argv[2], argv[3]);
 	return (0);
 }
