@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:04:05 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 11:04:34 by louisa           ###   ########.fr       */
+/*   Created: 2023/09/12 15:00:59 by louisa            #+#    #+#             */
+/*   Updated: 2023/09/12 15:41:31 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef _CAT_H__
+# define _CAT_H__
 
-int	main(void)
+# include <iostream>
+# include "Animal.hpp"
+
+class Cat : public Animal
 {
-	ScavTrap	scav1("irina");
+	public	:
+		Cat(void);
+		Cat(const Cat& cpy);
+		Cat&	operator=(const Cat& cpy);
+		~Cat(void);
 
-	scav1.setAttackPts(15);
-	ScavTrap	scav2(scav1);
+		void	makeSound() const;
+};
 
-	scav2.setName("Shedorus");
-	scav1.attack("the wall");
-	scav1.beRepaired(15);
-	scav1.takeDamage(600);
-	scav1.takeDamage(600);
-	scav2.guardGate();
-	scav2.guardGate();
-	scav2.attack("bob");
-	return (0);
-}
+#endif

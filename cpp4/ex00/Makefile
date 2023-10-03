@@ -5,22 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: louisa <louisa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/08 10:38:42 by lboudjem          #+#    #+#              #
-#    Updated: 2023/09/12 11:11:22 by louisa           ###   ########.fr        #
+#    Created: 2023/09/12 14:59:35 by louisa            #+#    #+#              #
+#    Updated: 2023/09/12 16:18:04 by louisa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= a.out
 
-SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS	= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-CC		= g++
+CC		= c++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADER	= ClapTrap.hpp ScavTrap.hpp
+HEADER	= Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:04:05 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 11:04:34 by louisa           ###   ########.fr       */
+/*   Created: 2023/09/12 11:29:12 by louisa            #+#    #+#             */
+/*   Updated: 2023/09/12 11:40:05 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int	main(void)
+#include <iostream>
+
+#include "ClapTrap.hpp"
+
+class FragTrap : public ClapTrap
 {
-	ScavTrap	scav1("irina");
+	public:
+		FragTrap(void);
+		FragTrap(std::string name);
+		~FragTrap(void);
+		FragTrap(const FragTrap& bycopy);
+		
+		FragTrap& operator=(const FragTrap& bycopy);
+	
+		void	highFivesGuys(void);
+};
 
-	scav1.setAttackPts(15);
-	ScavTrap	scav2(scav1);
-
-	scav2.setName("Shedorus");
-	scav1.attack("the wall");
-	scav1.beRepaired(15);
-	scav1.takeDamage(600);
-	scav1.takeDamage(600);
-	scav2.guardGate();
-	scav2.guardGate();
-	scav2.attack("bob");
-	return (0);
-}
+#endif 

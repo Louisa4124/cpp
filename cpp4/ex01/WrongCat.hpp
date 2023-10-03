@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 11:04:05 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 11:04:34 by louisa           ###   ########.fr       */
+/*   Created: 2023/09/12 15:00:59 by louisa            #+#    #+#             */
+/*   Updated: 2023/09/12 15:54:01 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#ifndef _WRONG_CAT_H__
+# define _WRONG_CAT_H__
 
-int	main(void)
+# include <iostream>
+# include "WrongAnimal.hpp"
+
+class WrongCat : public WrongAnimal
 {
-	ScavTrap	scav1("irina");
+	public	:
+		WrongCat(void);
+		WrongCat(const WrongCat& cpy);
+		WrongCat&	operator=(const WrongCat& cpy);
+		~WrongCat(void);
 
-	scav1.setAttackPts(15);
-	ScavTrap	scav2(scav1);
+		void	makeSound() const;
+};
 
-	scav2.setName("Shedorus");
-	scav1.attack("the wall");
-	scav1.beRepaired(15);
-	scav1.takeDamage(600);
-	scav1.takeDamage(600);
-	scav2.guardGate();
-	scav2.guardGate();
-	scav2.attack("bob");
-	return (0);
-}
+#endif

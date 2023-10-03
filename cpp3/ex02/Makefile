@@ -6,13 +6,13 @@
 #    By: louisa <louisa@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/08 10:38:42 by lboudjem          #+#    #+#              #
-#    Updated: 2023/09/12 11:11:22 by louisa           ###   ########.fr        #
+#    Updated: 2023/09/12 12:25:02 by louisa           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= a.out
 
-SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
@@ -20,7 +20,7 @@ CC		= g++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADER	= ClapTrap.hpp ScavTrap.hpp
+HEADER	= ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

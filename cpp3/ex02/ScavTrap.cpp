@@ -6,7 +6,7 @@
 /*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:54:48 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 11:31:02 by louisa           ###   ########.fr       */
+/*   Updated: 2023/09/12 11:14:58 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& bycopy)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << this->getName() << " is garding the gate" << std::endl;
+	std::cout << "CcavTrap " << this->getName() << " is garding the gate" << std::endl;
 	this->setMode(true);
 }
 
