@@ -3,24 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 21:58:37 by louisa            #+#    #+#             */
-/*   Updated: 2023/08/18 21:59:56 by louisa           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:06:14 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
-Contact::Contact()
-{
-	return;
-}
+Contact::Contact() : first_name("") {}
 
-Contact::~Contact()
-{
-	return;
-}
+Contact::~Contact() {}
 
 std::string Contact::get_first_name() const
 {
@@ -51,7 +45,7 @@ int Contact::set_first_name(std::string new_name)
 {
 	size_t	i;
 
-	i = 0;
+    i = 0;
     if (new_name.length() == 0)
         return (-1);
     while (i < new_name.size())
@@ -63,11 +57,6 @@ int Contact::set_first_name(std::string new_name)
         else
 			return (-1);
 	}
-    if (new_name.length() > 10)
-    {
-        new_name[9] = '.';
-        new_name.erase(10, new_name.length() - 10);
-    }
     this->first_name = new_name;
     return (0);
 }
@@ -88,11 +77,6 @@ int Contact::set_last_name(std::string new_name)
         else
 			return (-1);
 	}
-    if (new_name.length() > 10)
-    {
-        new_name[9] = '.';
-        new_name.erase(10, new_name.length() - 10);
-    }
     this->last_name = new_name;
     return (0);
 }
@@ -113,11 +97,6 @@ int Contact::set_nickname(std::string new_name)
         else
 			return (-1);
 	}
-    if (new_name.length() > 10)
-    {
-        new_name[9] = '.';
-        new_name.erase(10, new_name.length() - 10);
-    }
     this->nickname = new_name;
     return (0);
 }
@@ -126,11 +105,6 @@ int Contact::set_secret(std::string new_secret)
 {
     if (new_secret.length() == 0)
         return (-1);
-    if (new_secret.length() > 10)
-    {
-        new_secret[9] = '.';
-        new_secret.erase(10, new_secret.length() - 10);
-    }
     this->darkest_secret = new_secret;
     return (0);
 }
@@ -147,11 +121,6 @@ int Contact::set_number(std::string new_number)
 		if (!isdigit(new_number[i]))
 			return (-1);
         ++i;
-    }
-    if (new_number.length() > 10)
-    {
-        new_number[9] = '.';
-        new_number.erase(10, new_number.length() - 10);
     }
     this->phone_number = new_number;
     return (0);

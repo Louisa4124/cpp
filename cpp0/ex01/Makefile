@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/18 21:44:48 by louisa            #+#    #+#              #
-#    Updated: 2023/08/24 12:05:16 by lboudjem         ###   ########.fr        #
+#    Updated: 2023/09/18 13:51:02 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	= PhoneBook.cpp Contact.cpp main.cpp
 
 OBJS	=	$(SRCS:.cpp=.o)
 
-CC		= g++
+CC		= c++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
@@ -33,10 +33,9 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 
-re:	fclean
-	${MAKE} all 
+re:	fclean all
 
 %.o: %.cpp 
-	$(CC) $(FLAGS) -c $<  -o $(<:.cpp=.o)
+	$(CC) $(FLAGS) -c $<  -o $@
 
 .PHONY: all clean fclean re

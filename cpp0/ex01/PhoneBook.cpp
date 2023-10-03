@@ -3,24 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 21:45:41 by louisa            #+#    #+#             */
-/*   Updated: 2023/08/18 22:25:40 by louisa           ###   ########.fr       */
+/*   Updated: 2023/09/18 14:38:42 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
-{
-	return;
-}
+PhoneBook::PhoneBook() : i(0) {}
 
-PhoneBook::~PhoneBook()
-{
-	return;
-}
+PhoneBook::~PhoneBook() {}
 
 void    PhoneBook::how_to(void) const 
 {
@@ -35,6 +29,8 @@ void    PhoneBook::how_to(void) const
 
 int     PhoneBook::add_first_name(std::string first_name)
 {
+    first_name = "";
+    
     while (std::cin.good() && first_name.length() == 0)
     {
         std::cout << "Enter first name : ";
@@ -144,19 +140,37 @@ void    PhoneBook::add_contact(void)
     std::cout << std::endl;
 }
 
-void    PhoneBook::display_contact(int i) const
+std::string trim_str(std::string str)
 {
+    std::string new_str;
+
+    new_str = str;
+    if (new_str.length() > 10)
+    {
+        new_str[9] = '.';
+        new_str.erase(10, new_str.length() - 10);
+    }
+    return(new_str);
+}
+
+int    PhoneBook::display_contact(int i) const
+{
+    int num;
+
+    num = 0;
     if (i == -1)
     {
         i = 0;
-        while (i < 8)
+        while (i < 8 && contact[i].get_first_name().length() > 0)
         {
-            std::cout << std::setw(10) << i << "|";
-            std::cout << std::setw(10) << contact[i].get_first_name() << "|";
-            std::cout << std::setw(10) << contact[i].get_last_name() << "|";
-            std::cout << std::setw(10) << contact[i].get_nickname() << std::endl;
+            std::cout << std::setw(10) << i + 1 << "|";
+            std::cout << std::setw(10) << trim_str(contact[i].get_first_name()) << "|";
+            std::cout << std::setw(10) << trim_str(contact[i].get_last_name()) << "|";
+            std::cout << std::setw(10) << trim_str(contact[i].get_nickname()) << std::endl;
             ++i;
+            ++num;
         }
+        return (num);
     }
     else
     {
@@ -166,6 +180,7 @@ void    PhoneBook::display_contact(int i) const
         std::cout << "Phone number : " << contact[i].get_number() << std::endl;
         std::cout << "Darkest secret : " << contact[i].get_secret() << std::endl;
         std::cout << std::endl;
+        return(0);
     }
 }
 
@@ -173,21 +188,30 @@ void    PhoneBook::search_contact(void) const
 {
     std::string input = "";
     int         index = -1;
+    int         num   = 0;
 
-    display_contact(index);
-    std::cout << "Enter an index value : " << std::endl;
-    while (std::cin.good() && input.length() == 0)
+    num = display_contact(index);
+    if (num > 0)
     {
-        while (index < 0 || index > 7)
+        std::cout << "Enter an index value : " << std::endl;
+        while (std::cin.good() && input.length() == 0)
         {
-            std::cout << ">> ";
-            getline(std::cin, input);
-            index = atoi(input.c_str());
-            if (index >= 0 && index <= 7)
-                display_contact(index);
-            else
-                std::cout << "Please enter an index value between 0 and 7" << std::endl;
+            while (std::cin.good() && (index < 0 || index > 7))
+            {
+                std::cout << ">> ";
+                getline(std::cin, input);
+                index = atoi(input.c_str());
+                if (index > 0 && index <= num)
+                    display_contact(index - 1);
+                else
+                {
+                    std::cout << "Please enter an index value between 1 and " << num << std::endl;
+                    index = -1;
+                }
+            }
         }
+        std::cin.clear();   
     }
-    std::cin.clear();
+    else
+        std::cout << "No contact to display" << std::endl;
 }

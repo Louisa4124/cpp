@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/23 14:48:31 by lboudjem          #+#    #+#              #
-#    Updated: 2023/08/24 12:04:52 by lboudjem         ###   ########.fr        #
+#    Updated: 2023/09/18 10:14:20 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	= main.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-CC		= g++
+CC		= c++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 
@@ -33,10 +33,9 @@ clean:
 fclean: clean
 	${RM} ${NAME}
 
-re:	fclean
-	${MAKE} all 
+re:	fclean all
 
 %.o: %.cpp 
-	$(CC) $(FLAGS) -c $<  -o $(<:.cpp=.o)
+	$(CC) $(FLAGS) -c $<  -o $@
 
 .PHONY: all clean fclean re

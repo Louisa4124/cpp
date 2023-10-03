@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 12:18:31 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/24 15:27:57 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/21 13:12:45 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,25 +36,34 @@ void	ft_replace(std::ifstream &ifs, std::ofstream& ofs, const std::string s1, co
 
 int main(int argc, char **argv)
 {
-
+	std::string arg2 = argv[2];
+	std::string arg3 = argv[3];
+	
 	if (argc != 4)
 	{
 		std::cout << "How to use: ./ex04 <filename> <find> <replace>" << std::endl;
 		return (1);
 	}
-
+	
+	if (arg2.length() == 0 || arg3.length() == 0)
+	{
+		std::cout << "Invalid character" << std::endl;
+		return (1);
+	}
+	
 	std::string filename = argv[1];
 	std::string	replace = (filename + ".replace");
 	std::ifstream ifs;
 	
 	ifs.open(argv[1]);
 	if (ifs.fail())
-		std::cout << "could not find file" << std::endl;
+		std::cout << "Could not find file" << std::endl;
 
 	std::ofstream ofs(replace.c_str(), std::ios::out | std::ios::trunc);
 	if (ofs.fail())
-		std::cout << "could not find file" << std::endl;
+		std::cout << "Could not find file" << std::endl;
 
+		
 	ft_replace(ifs, ofs, argv[2], argv[3]);
 	return (0);
 }
