@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 11:29:14 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 14:24:52 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/03 10:56:14 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ FragTrap::~FragTrap()
 
 FragTrap& FragTrap::operator=(const FragTrap& bycopy)
 {
+	if (&bycopy == this)
+		return (*this);
 	this->setName(bycopy.getName());
 	this->setHitPts(bycopy.getHitPts());
 	this->setEnergyPts(bycopy.getEnergyPts());

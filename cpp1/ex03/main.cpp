@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:09:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/24 12:11:52 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:05:21 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,10 @@ int main()
 		jim.attack();
 		club.setType("some other type of club");
 		jim.attack();
+	}
+	{
+		HumanB julien("julien"); // without weapon
+		julien.attack();
 	}
 	return 0;
 }

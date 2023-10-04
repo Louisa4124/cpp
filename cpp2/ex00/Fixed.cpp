@@ -6,17 +6,16 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/08 10:40:32 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/09/08 13:56:00 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:17:58 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-static const int _nb_bits = 8;
+const int Fixed::_nb_bits = 8;
 
-Fixed::Fixed()
+Fixed::Fixed() : _raw_bits(0)
 {
-	_raw_bits = 0;
 	std::cout << "Default constructor called" << std::endl;
 }
 
@@ -34,6 +33,8 @@ Fixed::Fixed(const Fixed &bycopy)
 Fixed &Fixed::operator=(const Fixed &bycopy)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
+	if (&bycopy == this)
+		return (*this);
 	setRawBits(bycopy.getRawBits());
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:07 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:48:27 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:39:47 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,23 @@ int main()
 {
 	std::cout << std::endl << "*----------- Constructors ------------*" << std::endl << std::endl;
 	
-	const Animal* meta[] = {new Dog(), new Dog(), new Dog(), new Cat(), new Cat(), new Cat()};
+	// const Animal* meta = new Animal(); // abstract class
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 	
 	std::cout << std::endl << "*----------- Animal Sounds -----------*" << std::endl << std::endl;
 	
-	for (int i=0; i<6; ++i)
-		meta[i]->makeSound();
-
+	std::cout << i->getType() << " sound: ";
+	i->makeSound();
+	std::cout << j->getType() << " sound: ";
+	j->makeSound();
+	// std::cout << meta->getType() << " sound: ";
+	// meta->makeSound();
+	
 	std::cout << std::endl << "*------------ Destructors --------------*" << std::endl << std::endl;
-	for (int i=0; i<6; ++i)
-	{
-		delete meta[i];
-		std::cout << "Animal " << i << " was deleted" << std::endl;
-	}
+	// delete meta;
+	delete i;
+	delete j;
 	
 	return (0);
 }

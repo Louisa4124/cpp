@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:50 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 16:29:53 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/04 14:43:26 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 Dog::Dog(void)
 {
-	std::cout << "Default Dog constructor called" << std::endl;
 	this->setType("Dog");
+	std::cout << "Default Dog constructor called" << std::endl;
 }
 
 Dog::Dog(const Dog& cpy) : Animal(cpy)
@@ -33,11 +33,12 @@ Dog&	Dog::operator=(const Dog& cpy)
 	return (*this);
 };
 
-Dog::~Dog(void) {
+Dog::~Dog(void) 
+{
 	std::cout << "Default Dog destructor called" << std::endl;
 }
 
 void	Dog::makeSound() const 
 {
-	std::cout << "Woof" << std::endl;
+	std::cout << "*Woof*" << std::endl;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:01:04 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 16:28:15 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/04 14:44:06 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ WrongCat::~WrongCat(void) {
 
 void	WrongCat::makeSound() const
 {
-	std::cout << "Meow" << std::endl;
+	std::cout << "*Meow*" << std::endl;
 }
 	

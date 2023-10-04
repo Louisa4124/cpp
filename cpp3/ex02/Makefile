@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: louisa <louisa@student.42.fr>              +#+  +:+       +#+         #
+#    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/08 10:38:42 by lboudjem          #+#    #+#              #
-#    Updated: 2023/09/12 12:25:02 by louisa           ###   ########.fr        #
+#    Updated: 2023/10/03 10:56:26 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS	= main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
-CC		= g++
+CC		= c++
 
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 

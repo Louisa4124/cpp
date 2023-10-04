@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 14:57:08 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/11 16:27:56 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/03 10:55:52 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ ClapTrap::~ClapTrap()
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& bycopy)
 {
+	if (&bycopy == this)
+		return (*this);
 	this->setName(bycopy.getName());
 	this->setHitPts(bycopy.getHitPts());
 	this->setEnergyPts(bycopy.getEnergyPts());

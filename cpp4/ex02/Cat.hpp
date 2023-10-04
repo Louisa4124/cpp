@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 16:31:25 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:23:51 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/09/12 15:00:59 by louisa            #+#    #+#             */
+/*   Updated: 2023/09/12 16:42:55 by louisa           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _BRAIN_H__
-# define _BRAIN_H__
+#ifndef _CAT_H__
+# define _CAT_H__
 
 # include <iostream>
+# include "Animal.hpp"
+# include "Brain.hpp"
 
-class Brain 
+class Cat : public Animal
 {
-	protected	:
-		std::string	_ideas[100];
-
+	private	:
+		Brain *_brain;
 	public	:
-		Brain(void);
-		Brain(const Brain& cpy);
-		Brain&	operator=(const Brain& cpy);
-		virtual ~Brain(void);
+		Cat(void);
+		Cat(const Cat& cpy);
+		Cat&	operator=(const Cat& cpy);
+		~Cat(void);
 
-		std::string*	getIdeas(void) const;
-		void	setIdeas(std::string ideas);
+		void	makeSound() const;
 };
 
 #endif

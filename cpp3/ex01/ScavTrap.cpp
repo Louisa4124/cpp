@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 15:54:48 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 11:31:02 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/03 10:56:04 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ ScavTrap::~ScavTrap()
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& bycopy)
 {
+	if (&bycopy == this)
+		return (*this);
 	this->setName(bycopy.getName());
 	this->setHitPts(bycopy.getHitPts());
 	this->setEnergyPts(bycopy.getEnergyPts());

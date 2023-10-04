@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:15:45 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 16:28:59 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/04 14:43:56 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) {
+
+WrongAnimal::WrongAnimal(void) : _type("Default Wrong")
+{
 	std::cout << "Default Wrong Animal constructor called" << std::endl;
 }
 
@@ -47,6 +49,7 @@ void	WrongAnimal::setType(std::string type)
 
 void	WrongAnimal::makeSound() const
 {
-	std::cout << "Random wrong animal noises" << std::endl;
+	std::cout << "*Random wrong animal noises*" << std::endl;
 }
 	
+

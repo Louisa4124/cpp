@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:15:45 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:35:58 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:37:24 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,3 @@ void	Animal::setType(std::string type)
 {
 	this->_type = type; 
 }
-
-void	Animal::makeSound() const
-{
-	std::cout << "Random animal noises" << std::endl;
-}
-	

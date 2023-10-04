@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: louisa <louisa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:07 by louisa            #+#    #+#             */
-/*   Updated: 2023/09/12 16:19:40 by louisa           ###   ########.fr       */
+/*   Updated: 2023/10/04 14:42:27 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,38 @@
 
 int main()
 {
+	std::cout << std::endl << "*----------- Constructors ------------*" << std::endl << std::endl;
+	
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
+	
+	std::cout << std::endl << "*----------- Animal Sounds -----------*" << std::endl << std::endl;
+	
+	std::cout << i->getType() << " sound: ";
+	i->makeSound();
+	std::cout << j->getType() << " sound: ";
 	j->makeSound();
+	std::cout << meta->getType() << " sound: ";
 	meta->makeSound();
 
-	std::cout << std::endl << "*------------ Wong Animal -------------*" << std::endl << std::endl;
+	std::cout << std::endl << "*------ Wong Animal Constructors ------*" << std::endl << std::endl;
 
 	const WrongAnimal* wrong = new WrongAnimal();
 	const WrongAnimal* k = new WrongCat();
-	std::cout << k->getType() << " " << std::endl;
-	k->makeSound(); //will output the wrong cat sound!
+
+	std::cout << std::endl << "*--------- Wrong Animal Sounds --------*" << std::endl << std::endl;
+	std::cout << k->getType() << " sound: ";
+	k->makeSound();
+	std::cout << wrong->getType() << " sound: ";
 	wrong->makeSound();
 	
+	std::cout << std::endl << "*------------ Destructors --------------*" << std::endl << std::endl;
 	delete meta;
 	delete wrong;
 	delete i;
 	delete j;
 	delete k;
-	return 0;
+	
+	return (0);
 }

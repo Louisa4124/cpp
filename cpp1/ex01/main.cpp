@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 14:15:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/08/23 14:46:31 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:02:20 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,11 @@ int main(void)
 {
 	int N;
 
-	N = 5;
+	N = 50;
 	Zombie *zombie = zombieHorde(N, "michel");
 	for (int i = 0; i < N; i++)
     	zombie[i].announce();
+
     delete[](zombie);
 	return (0);
 }
