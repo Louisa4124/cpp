@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:50 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:41:27 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:25:44 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog& cpy) : Animal(cpy)
 {
-	this->setType(cpy.getType());
 	this->_brain = new Brain(*cpy._brain);
 	std::cout << "Copy Dog constructor called" << std::endl;
 }

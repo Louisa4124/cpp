@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:01:04 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:41:22 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:29:46 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat& cpy) : Animal(cpy)
 {
-	this->setType(cpy.getType());
 	this->_brain = new Brain(*cpy._brain);
 	std::cout << "Copy Cat constructor called" << std::endl;
 }
@@ -47,4 +46,3 @@ void	Cat::makeSound() const
 {
 	std::cout << "*Meow*" << std::endl;
 }
-	

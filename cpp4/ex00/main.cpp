@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:07 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:42:27 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/10/05 11:17:47 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int main()
 	std::cout << meta->getType() << " sound: ";
 	meta->makeSound();
 
-	std::cout << std::endl << "*------ Wong Animal Constructors ------*" << std::endl << std::endl;
+	std::cout << std::endl << "*------ Wrong Animal Constructors ------*" << std::endl << std::endl;
 
 	const WrongAnimal* wrong = new WrongAnimal();
 	const WrongAnimal* k = new WrongCat();

@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:47 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/10/05 14:02:36 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/10/05 14:08:56 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/10/05 14:11:34 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
+
+#include <iostream>
 #include "AMateria.hpp"
 
-int main()
+class ICharacter
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	
-	ICharacter* me = new Character("me");
-	
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	public:
+		virtual ~ICharacter() {};
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
 
-	ICharacter* bob = new Character("bob");
-
-	me->use(0, *bob);
-	me->use(1, *bob);
-
-	delete bob;
-	delete me;
-	delete src;
-	
-	return 0;
-}
+#endif

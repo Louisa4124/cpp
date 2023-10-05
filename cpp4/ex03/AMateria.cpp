@@ -1,39 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:47 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/10/05 14:02:36 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/10/05 13:59:13 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/10/05 14:01:34 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
-int main()
+AMateria::AMateria(void)
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
 	
-	ICharacter* me = new Character("me");
+}
+
+AMateria::~AMateria(void)
+{
 	
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-
-	ICharacter* bob = new Character("bob");
-
-	me->use(0, *bob);
-	me->use(1, *bob);
-
-	delete bob;
-	delete me;
-	delete src;
-	
-	return 0;
 }

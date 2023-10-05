@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:47 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/10/05 14:02:36 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/10/05 14:12:02 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/10/05 14:19:22 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _CURE_H__
+# define _CURE_H__
+
 #include "AMateria.hpp"
 
-int main()
+class Cure : public AMateria
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
 	
-	ICharacter* me = new Character("me");
-	
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	private	:
+		std::string	_type;
 
-	ICharacter* bob = new Character("bob");
+	public	:
 
-	me->use(0, *bob);
-	me->use(1, *bob);
+		Cure(void);
+		Cure(const Cure& src);
+		Cure&	operator=(const Cure& src);
+		~Cure(void);
 
-	delete bob;
-	delete me;
-	delete src;
-	
-	return 0;
-}
+		std::string	getType(void) const;
+		void		setType(std::string type);
+
+};
+
+#endif

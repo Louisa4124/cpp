@@ -1,39 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 15:45:47 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/10/05 14:02:36 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/10/05 14:12:08 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/10/05 14:19:34 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef _ICE_H__
+# define _ICE_H__
+
 #include "AMateria.hpp"
 
-int main()
+class Ice : public AMateria
 {
-	IMateriaSource* src = new MateriaSource();
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
 	
-	ICharacter* me = new Character("me");
-	
-	AMateria* tmp;
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
+	private	:
+		std::string	_type;
 
-	ICharacter* bob = new Character("bob");
+	public	:
 
-	me->use(0, *bob);
-	me->use(1, *bob);
+		Ice(void);
+		Ice(const Ice& src);
+		Ice&	operator=(const Ice& src);
+		~Ice(void);
 
-	delete bob;
-	delete me;
-	delete src;
-	
-	return 0;
-}
+		std::string	getType(void) const;
+		void		setType(std::string type);
+
+};
+
+#endif
