@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:14:11 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/08 13:03:52 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/08 13:03:48 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,20 @@ int			Bureaucrat::getGrade(void) const
 void		Bureaucrat::setGrade(int grade)
 {
 	this->_grade = grade;
+}
+
+void		Bureaucrat::signForm(Form &f)
+{
+	try
+	{
+		f.beSigned(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->getName() << " couldn't sign " << f.getName() \
+			<< " because " << e.what() << std::endl;
+	}
+	
 }
 
 std::ostream& operator<<(std::ostream& ostream, Bureaucrat const& b)
