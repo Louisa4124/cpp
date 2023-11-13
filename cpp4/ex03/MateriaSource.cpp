@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 15:04:45 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/10/05 15:06:05 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/10/10 13:13:46 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ MateriaSource&	MateriaSource::operator=(const MateriaSource& src)
 MateriaSource::~MateriaSource(void) 
 {};
 
-
 void	MateriaSource::learnMateria(AMateria*) 
 {};
 	
 AMateria*	MateriaSource::createMateria(std::string const & type) 
 {};
-	

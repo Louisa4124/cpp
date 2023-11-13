@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:07 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/05 13:37:34 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/02 11:43:52 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int main()
 		delete meta[i];
 		std::cout << "Animal " << i << " was deleted" << std::endl;
 	}
+
 	
 	return (0);
 }

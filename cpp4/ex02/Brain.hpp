@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 16:31:25 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:23:51 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/02 12:50:42 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class Brain
 		Brain&	operator=(const Brain& cpy);
 		virtual ~Brain(void);
 
-		std::string*	getIdeas(void) const;
 		void	setIdeas(std::string ideas);
 };
 

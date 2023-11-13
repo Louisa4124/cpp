@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:01:04 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/04 14:43:11 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/02 11:22:41 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ void	Cat::makeSound() const
 {
 	std::cout << "*Meow*" << std::endl;
 }
-	

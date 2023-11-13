@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 15:00:07 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/05 13:35:53 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/02 11:41:37 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,10 @@ int main()
 		std::cout << "Animal " << i << " was deleted" << std::endl;
 	}
 	
+	{
+		Dog	basic;
+		Dog	tmp = basic;
+	}
+
 	return (0);
 }

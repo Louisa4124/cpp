@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 16:31:25 by louisa            #+#    #+#             */
-/*   Updated: 2023/10/25 11:07:05 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/11/08 15:40:40 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/11/08 15:59:14 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _BRAIN_H__
-# define _BRAIN_H__
+#ifndef ROBOTOMY_HPP
+# define ROBOTOMY_HPP
 
 # include <iostream>
+# include "AForm.hpp"
 
-class Brain 
+class RobotomyRequestForm : public AForm
 {
-	protected	:
-		std::string	_ideas[100];
+	private:
+		RobotomyRequestForm(void);
+		RobotomyRequestForm(const RobotomyRequestForm& cpy);
+		RobotomyRequestForm& operator=(const RobotomyRequestForm& cpy);
+		
+		std::string	_target;
 
-	public	:
-		Brain(void);
-		Brain(const Brain& cpy);
-		Brain&	operator=(const Brain& cpy);
-		virtual ~Brain(void);
+	public:
+		RobotomyRequestForm(std::string target);
+		~RobotomyRequestForm(void);
 
-		// std::string*	getIdeas(void) const;
-		void	setIdeas(std::string ideas);
+		void	execute(Bureaucrat const & executor) const;
 };
 
 #endif
