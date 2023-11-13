@@ -6,18 +6,18 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:41:40 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/13 11:13:59 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:27:51 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) : AForm("default Shrubbery", 72, 45), _target("default")
+RobotomyRequestForm::RobotomyRequestForm(void) : AForm("RobotomyRequestForm", 72, 45), _target("default")
 {	
 	std::cout << "RobotomyRequestForm constructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("default Shrubbery", 72, 45), 
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), 
 													_target(target)
 {	
 	std::cout << "RobotomyRequestForm constructor called" << std::endl;
@@ -28,9 +28,9 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& cpy) : AForm("copy Shrubbery", 72, 45)
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& cpy) : AForm("RobotomyRequestForm", 72, 45),
+														_target(cpy._target)
 {
-	(void) cpy;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -38,6 +38,7 @@ RobotomyRequestForm&	RobotomyRequestForm::operator=(const RobotomyRequestForm& c
 {
 	if (this == &cpy)
 		return (*this);
+	_target = cpy._target;
 	std::cout << "Default Operator called" << std::endl;
 	return (*this);
 };

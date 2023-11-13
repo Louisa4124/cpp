@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:14:11 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/13 11:11:15 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 14:40:43 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ Bureaucrat::~Bureaucrat(void)
 	std::cout << "Bureaucrat destructor called" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& cpy) 
+Bureaucrat::Bureaucrat(const Bureaucrat& cpy) : _name(cpy.getName())
 {
 	this->setGrade(cpy.getGrade());
 	std::cout << "Copy constructor called" << std::endl;
@@ -75,6 +75,10 @@ int			Bureaucrat::getGrade(void) const
 
 void		Bureaucrat::setGrade(int grade)
 {
+	if (grade > 150)
+		throw (Bureaucrat::GradeTooLowException());
+	if (grade < 1)
+		throw (Bureaucrat::GradeTooHighException());
 	this->_grade = grade;
 }
 
@@ -89,7 +93,6 @@ void		Bureaucrat::signForm(AForm &f)
 		std::cout << this->getName() << " couldn't sign " << f.getName() \
 			<< " because " << e.what() << std::endl;
 	}
-	
 }
 
 void	Bureaucrat::executeForm(AForm const & form)

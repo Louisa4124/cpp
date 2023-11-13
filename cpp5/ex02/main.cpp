@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:14:18 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/13 11:11:41 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:31:24 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	main(void)
 {
-	std::cout << "*-------- Constructor test -------*" << std::endl << std::endl;
+	std::cout << "*-------- Constructor  -------*" << std::endl << std::endl;
 
 	Bureaucrat	b1("Smith", 15);
 	Bureaucrat	b2("Smithus", 147);

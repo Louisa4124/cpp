@@ -6,18 +6,18 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 15:43:03 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/13 10:57:49 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:24:09 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) : AForm("default Shrubbery", 25, 5), _target("default")
+PresidentialPardonForm::PresidentialPardonForm(void) : AForm("PresidentialPardonForm", 25, 5), _target("default")
 {	
 	std::cout << "PresidentialPardonForm constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("default Shrubbery", 25, 5), 
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), 
 													_target(target)
 {	
 	std::cout << "PresidentialPardonForm constructor called" << std::endl;
@@ -28,9 +28,9 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& cpy) : AForm("copy Shrubbery", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& cpy) : AForm("PresidentialPardonForm", 25, 5), 
+																	_target(cpy._target)
 {
-	(void) cpy;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
@@ -38,6 +38,7 @@ PresidentialPardonForm&	PresidentialPardonForm::operator=(const PresidentialPard
 {
 	if (this == &cpy)
 		return (*this);
+	_target = cpy._target;
 	std::cout << "Default Operator called" << std::endl;
 	return (*this);
 };

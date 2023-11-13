@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/06 14:14:30 by lboudjem          #+#    #+#              #
-#    Updated: 2023/11/08 15:20:08 by lboudjem         ###   ########.fr        #
+#    Updated: 2023/11/13 13:28:29 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ all:	$(NAME)
 
 clean:
 	${RM} ${OBJS}
+	rm *_shrubbery
 
 fclean: clean
 	${RM} ${NAME}

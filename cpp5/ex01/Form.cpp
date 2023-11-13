@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:23:28 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/08 15:06:00 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:09:09 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	Form::beSigned(Bureaucrat &b)
 {
 	if (this->_signed == true)
 		return ;
-	else if (b.getGrade() < this->getGradeSign())
+	else if (b.getGrade() <= this->getGradeSign())
 	{
 		this->_signed = true;
 		std::cout << b.getName() << " has signed the " << getName() << " form" << std::endl;

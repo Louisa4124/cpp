@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:14:18 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/08 15:04:33 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:10:41 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,6 @@ int main(void)
 		std::cout << f << std::endl;
 
 		Form	e("AB-41", 141, 5);
-		std::cout << e << std::endl;
 		std::cout << e << std::endl;
 		
 	}

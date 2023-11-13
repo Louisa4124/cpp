@@ -61,7 +61,7 @@ void	AForm::beSigned(Bureaucrat &b)
 {
 	if (this->_signed == true)
 		std::cout << "form already signed" << std::endl;
-	else if (b.getGrade() < this->getGradeSign())
+	else if (b.getGrade() <= this->getGradeSign())
 	{
 		this->_signed = true;
 		std::cout << b.getName() << " has signed the " << getName() << " AForm" << std::endl;
@@ -105,6 +105,6 @@ void		AForm::canExec(int grade) const
 {
 	if (_signed == false)
 		throw (AForm::FormNotSignedException());
-	if (grade > _gradeExec)
+	if (grade >= _gradeExec)
 		throw (AForm::GradeTooLowException());
 }

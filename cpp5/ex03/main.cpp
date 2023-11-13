@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:14:18 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/13 12:38:35 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:37:37 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,8 @@ int	main(void)
 
 	std::cout << std::endl;
 	std::cout << "*-------- Destructors -------*" << std::endl << std::endl;
+	delete f1;
+	delete f2;
+	delete f3;
 	return (0);
 }

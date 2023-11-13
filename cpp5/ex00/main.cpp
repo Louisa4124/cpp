@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 14:14:18 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/08 13:03:08 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/13 13:00:00 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(void)
 	{	
 		Bureaucrat	b("Smith", 141);
 		std::cout << b << std::endl;
+		Bureaucrat	c(b);
+		std::cout << c << std::endl;
 	}
 	catch (std::exception & e)
 	{
