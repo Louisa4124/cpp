@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:21:44 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/15 13:02:30 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/15 15:38:20 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,14 @@ class ScalarConverter
 		static bool isInt(const std::string str);
 		static bool isFloat(const std::string str);
 		static bool isDouble(const std::string str);
+		static bool isOverflow(const std::string str);
 		
 		static void printChar(const std::string str);
 		static void printInt(const std::string str);
 		static void printFloat(const std::string str);
 		static void printDouble(const std::string str);
+		static void printOverflow(void);
+
 	
 	public:
 		static void	convert(std::string str);

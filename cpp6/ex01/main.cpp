@@ -5,18 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 11:20:54 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/15 15:44:03 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/11/15 15:49:20 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/11/15 15:51:18 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#include "Serializer.hpp"
 
-int main(int argc, char **argv)
+int main(void)
 {
-	if (argc == 2)
-		ScalarConverter::convert(argv[1]);
-	else
-		std::cerr << "Wrong number of arguments" << std::endl;
-	return (0);
+	
 }

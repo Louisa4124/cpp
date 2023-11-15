@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/14 11:20:54 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/15 15:44:03 by lboudjem         ###   ########.fr       */
+/*   Created: 2023/11/15 15:49:54 by lboudjem          #+#    #+#             */
+/*   Updated: 2023/11/15 15:54:06 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-int main(int argc, char **argv)
+# include <iostream>
+# include <string>
+
+# include "Data.hpp"
+
+class Serializer
 {
-	if (argc == 2)
-		ScalarConverter::convert(argv[1]);
-	else
-		std::cerr << "Wrong number of arguments" << std::endl;
-	return (0);
-}
+	private:
+		Serializer(void);
+		~Serializer(void);
+		Serializer(const Serializer& cpy);
+		Serializer& operator=(const Serializer& cpy);
+
+	public:
+		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
+};
+
+#endif
