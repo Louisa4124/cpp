@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:21:31 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/15 12:27:36 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:04:33 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,19 @@ void ScalarConverter::printChar(const std::string str)
 
 void ScalarConverter::printInt(const std::string str)
 {
-	(void)str;
+	int		i = strtol(str.c_str(), NULL, 10);
+	char	c = static_cast<char> (i);
+	
+	if (!isprint(c))
+		std::cout << "char: non displayable" << std::endl;
+	else
+		std::cout << "char: " << c << std::endl;
+	std::cout << "int: ";
+	std::cout << i << std::endl; 
+	std::cout << "float: ";
+	std::cout << std::fixed << std::setprecision(1) << static_cast<float> (c) << "f" << std::endl;
+	std::cout << "double: ";
+	std::cout << std::fixed << std::setprecision(1) << static_cast<double> (c) << std::endl;
 }
 
 void ScalarConverter::printFloat(const std::string str)
@@ -143,4 +155,8 @@ void	ScalarConverter::convert(std::string str)
 		printChar(str);
 	else if (isInt(str))
 		printInt(str);
+	else if (isFloat(str))
+		printFloat(str);
+	else if (isDouble(str))
+		printDouble(str);
 }

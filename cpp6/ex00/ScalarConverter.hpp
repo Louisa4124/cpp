@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:21:44 by lboudjem          #+#    #+#             */
-/*   Updated: 2023/11/15 12:21:58 by lboudjem         ###   ########.fr       */
+/*   Updated: 2023/11/15 13:02:30 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <cstdlib>
 # include <climits>
 # include <cmath>
+# include <string>
 
 class ScalarConverter
 {
