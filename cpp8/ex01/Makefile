@@ -5,23 +5,22 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/27 14:03:36 by lboudjem          #+#    #+#              #
-#    Updated: 2024/05/28 13:59:23 by lboudjem         ###   ########.fr        #
+#    Created: 2024/05/28 11:04:12 by lboudjem          #+#    #+#              #
+#    Updated: 2024/05/28 11:14:31 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME	= span
 
-NAME	= array
-
-SRCS	= main.cpp 
+SRCS	= main.cpp Span.cpp
 
 OBJS	= $(SRCS:.cpp=.o)
 
 CC		= c++
 
-FLAGS	= -Wall -Wextra -Werror -std=c++98 
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADER	= Array.hpp
+HEADER	= Span.hpp
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

@@ -6,15 +6,13 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 13:31:51 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/05/27 14:01:17 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/05/28 13:46:12 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "iter.hpp"
 
-void	print_char(char& c) {std::cout << c;}
-void	print_int(int& i) {std::cout << i;}
 void	add_int(int& i) {i++;}
 
 void	to_upper(char& c) 

@@ -5,13 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/05/27 14:03:36 by lboudjem          #+#    #+#              #
-#    Updated: 2024/05/28 13:59:23 by lboudjem         ###   ########.fr        #
+#    Created: 2024/05/28 11:57:59 by lboudjem          #+#    #+#              #
+#    Updated: 2024/05/28 11:58:31 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-
-NAME	= array
+NAME	= MutantStack
 
 SRCS	= main.cpp 
 
@@ -19,9 +18,9 @@ OBJS	= $(SRCS:.cpp=.o)
 
 CC		= c++
 
-FLAGS	= -Wall -Wextra -Werror -std=c++98 
+FLAGS	= -Wall -Wextra -Werror -std=c++98
 
-HEADER	= Array.hpp
+HEADER	= MutantStack.hpp
 
 $(NAME): $(OBJS) $(HEADER)
 	@$(CC) $(OBJS) -o $(NAME)

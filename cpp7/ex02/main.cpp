@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/27 14:03:28 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/05/27 15:23:13 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/05/28 14:05:23 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,14 @@ int main(int, char**)
     std::cout << "*----- Size Function ------*" << std::endl;
     std::cout << "size = " << numbers.size() << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "*----- Size Function ------*" << std::endl;
-    std::cout << "size = " << numbers.size() << std::endl;
 
-    std::cout << std::endl;
-    std::cout << "*----- Empty Array ------*" << std::endl;
-    Array<int> empty;
-    std::cout << "size = " << empty.size() << std::endl;
-
+    {
+        std::cout << std::endl;
+        std::cout << "*----- Empty Array ------*" << std::endl;
+        Array<int> empty;
+        std::cout << "size = " << empty.size() << std::endl;
+    }
+    
     std::cout << std::endl;
     std::cout << "*----- Delete ------*" << std::endl;
     delete [] mirror;
