@@ -1,0 +1,46 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    notes.txt                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2024/06/01 13:49:07 by lboudjem          #+#    #+#              #
+#    Updated: 2024/06/01 15:25:06 by lboudjem         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+je veux coder en cpp98 un programme qui prend en parametre qui prend en parametre une suite de nombre et qui les trient
+je veux les trier en utilisant l'algorithme de ford Johnson
+Les etapes de cet algorithmes sont les suivantes:
+1. on prend une suite de nombres qu'on divise par pair
+2. si la suite est impaire, le dernier chiffre est mis de cote
+3. on trie les pairs 2 par 2
+4. on extrait le max de chaque pair
+5. si le nombre de max est > 2, on refait recursivement cet algo jusaqu'a ce que ce soit le cas
+6. on trie les maximum -> ca nous donne une serie M
+7. on trie les pairs en fonction des max -> ca nous donne une serie S
+8. on insere le premier element de S au debut de M 
+9. On insere le dernier elements de S qui n'est pas dans M par recherche dichotomique
+10. et ainsi de suite recursivement jusqu'a ce que tout soit trier
+
+voici un exemple:
+on a la suite : 9 5 4 1 2 0 8 6 3
+(5 9) (1 4) (0 2) (6 8) (on met 3 de cote)
+(9 4) (2 8)
+(4 9) (2 8)
+9 8
+8 9
+(2 8) (9 4)
+2 8 9
+on ajoute 4 par insertion dichotomique
+ca donne 2 4 8 9
+on trie (5 9) (1 4) (0 2) (6 8) en fonction de 2 4 8 9
+ca donne : (0 2) (1 4) (6 8) (5 9)
+on prend le premier element (donc 0) et on l'insere au debut de 2 4 8 9
+donc 0 2 4 8 9
+il reste 1, 6 et 5 a mettre
+on fait une insertion dichotomique pour chacun
+ca donne 0 1 2 4 5 6 8 9
+et voila
+
