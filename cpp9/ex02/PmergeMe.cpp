@@ -6,37 +6,32 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:56:56 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/01 16:14:12 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:05:17 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void sort_pair(std::vector<int>& numbers) {
-    for (size_t i = 0; i + 1 < numbers.size(); i += 2) 
+int get_jacobstahl(bool reinit, int i)
+{
+    static int          n1 = 0;
+    static int          n2 = 2;
+
+    if (reinit ==  true)
     {
-        if (numbers[i] > numbers[i + 1]) {
-            std::swap(numbers[i], numbers[i + 1]);
-        }
+        n1 = 0;
+        n2 = 2;
+        return (0);
     }
-}
-
-std::vector<int> extract_max_from_pairs(const std::vector<int>& numbers) 
-{
-    std::vector<int> max_numbers;
     
-    for (size_t i = 0; i + 1 < numbers.size(); i += 2)
-        max_numbers.push_back(std::max(numbers[i], numbers[i + 1]));
-
-    if (numbers.size() % 2 != 0) 
-        max_numbers.push_back(numbers.back());
-    
-    return (max_numbers);
+    if (i == 0)
+        return (n2);
+    else 
+    {
+        int n3 = n2 + (n1 * 2);
+        n1 = n2;
+        n2 = n3;
+    }
+    return (n2);
 }
 
-
-void binary_search(std::vector<int>& result, int value) 
-{
-    std::vector<int>::iterator it = std::lower_bound(result.begin(), result.end(), value);
-    result.insert(it, value);
-}
