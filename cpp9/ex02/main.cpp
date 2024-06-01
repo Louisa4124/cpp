@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:56:58 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/01 18:08:21 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:12:46 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int main(int argc, char* argv[])
 
     for (int i = 1; i < argc; ++i) {
         int num = std::atoi(argv[i]);
+        if (num < 0)
+        {
+            std::cerr << "Error" << std::endl;
+            return (1);
+        }
         input.push_back(num);
     }
 
@@ -37,6 +42,11 @@ int main(int argc, char* argv[])
     // for (int i = 1; i < argc; ++i) 
     // {
     //     int num = std::atoi(argv[i]);
+    //     if (num < 0)
+    //     {
+    //         std::cerr << "Error" << std::endl;
+    //         return (1);
+    //     }
     //     input.push_back(num);
     // }
 
