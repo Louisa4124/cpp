@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:56:58 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/01 18:12:46 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/01 18:13:40 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,25 @@ int main(int argc, char* argv[])
         return (1);
     }
 
-    std::deque<int> input;
-    std::deque<int> max;
-    std::deque<int> result;
+    // std::deque<int> input2;
+    // std::deque<int> result2;
 
-    for (int i = 1; i < argc; ++i) {
+    // for (int i = 1; i < argc; ++i) {
+    //     int num = std::atoi(argv[i]);
+    //     if (num < 0)
+    //     {
+    //         std::cerr << "Error" << std::endl;
+    //         return (1);
+    //     }
+    //     input2.push_back(num);
+    // }
+
+
+    std::vector<int> input;
+    std::vector<int> result;
+
+    for (int i = 1; i < argc; ++i) 
+    {
         int num = std::atoi(argv[i]);
         if (num < 0)
         {
@@ -33,22 +47,6 @@ int main(int argc, char* argv[])
         }
         input.push_back(num);
     }
-
-
-    // std::vector<int> input;
-    // std::vector<int> max;
-    // std::vector<int> result;
-
-    // for (int i = 1; i < argc; ++i) 
-    // {
-    //     int num = std::atoi(argv[i]);
-    //     if (num < 0)
-    //     {
-    //         std::cerr << "Error" << std::endl;
-    //         return (1);
-    //     }
-    //     input.push_back(num);
-    // }
 
     std::cout << "Before: ";
     for (size_t i = 0; i < input.size(); i++)
