@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:56:44 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/01 18:07:57 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/03 14:28:35 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <algorithm>
 # include <cstdlib>
 # include <deque>
+# include <ctime>
+# include <iomanip>
 
 int get_jacobstahl(bool reinit, int i);
 
@@ -56,7 +58,7 @@ T   extract_max(const T& numbers)
 template <typename T>
 void    algo(T& input, T& result)
 {
-    int                 odd = -1;
+    int  odd = -1;
     T    max;
     
     if (input.size() % 2 != 0)
@@ -125,6 +127,15 @@ void    algo(T& input, T& result)
     }
 
     get_jacobstahl(true, 0);
+}
+
+template <typename T>
+double timer(T& obj1, T& obj2)
+{
+    std::clock_t start = std::clock();
+    algo(obj1, obj2);
+    std::clock_t end = std::clock();
+    return (static_cast<double>(end - start));
 }
 
 #endif
