@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:56:58 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/03 14:50:12 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:07:31 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,13 @@ int main(int argc, char* argv[])
         int num = std::atoi(argv[i]);
         if (num < 0)
         {
-            std::cerr << "Error" << std::endl;
+            std::cerr << "Error: Negative number: " << num << std::endl;
             return (1);
+        }
+        if (std::find(input.begin(), input.end(), num) != input.end())
+        {
+            std::cerr << "Error: Duplicated number: " << num <<  std::endl;
+            return 1;
         }
         input.push_back(num);
         input2.push_back(num);
@@ -51,7 +56,7 @@ int main(int argc, char* argv[])
     std::cout << "After : ";
     for (size_t i = 0; i < result.size(); i++)
         std::cout << result[i] << " ";
-    std::cout << std::endl << std::endl;
+    std::cout << std::endl;
     
     std::cout << "Time to process a range of " << input.size();
     std::cout << " elements with std::vector : " << std::fixed << std::setprecision(5) <<  timeV / CLOCKS_PER_SEC << " us" << std::endl;

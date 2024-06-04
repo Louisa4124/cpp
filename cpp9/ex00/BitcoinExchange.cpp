@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 10:57:51 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/04 14:27:41 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:50:10 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,19 +60,22 @@ bool BitcoinExchange::isValidDate(const std::string& date)
     if (!(iss >> year >> dash1 >> month >> dash2 >> day))
         return (false);
 
-    if (dash1 != '-' || dash2 != '-' || year < 1900 || month < 1 || month > 12 || day < 1)
+    if (dash1 != '-' || dash2 != '-' || month < 1 || month > 12 || day < 1)
         return (false);
 
     if (month == 2 && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) 
+    {
         if (day > 29) 
             return (false);
+    }
     else 
+    {
         if (day > daysInMonth[month - 1]) 
             return (false);
+    }
 
     return (true);
 }
-
 
 void BitcoinExchange::output(const char *input) 
 {
@@ -84,6 +87,7 @@ void BitcoinExchange::output(const char *input)
     }
 
     std::string line;
+    std::getline(file, line);
     while (std::getline(file, line)) 
     {
         std::istringstream iss(line);
@@ -107,7 +111,6 @@ void BitcoinExchange::output(const char *input)
 
                 char* end;
                 double value = std::strtod(value_str.c_str(), &end);
-                (void) value;
 
                 if (*end == '\0') 
                 {
@@ -117,12 +120,13 @@ void BitcoinExchange::output(const char *input)
                     {
                         if (it != _data_content.begin())
                             --it;
-                        else {
+                        else 
+                        {
                             std::cout << date << " => " << "No exchange_rate found" << std::endl;
                             continue;
                         }
                     }
-                    if (value <= 0)
+                    if (value < 0)
                         std::cerr << "Error: not a positive number" << std::endl;
                     else if (value > 1000)
                         std::cerr << "Error: too large a number." << std::endl;
@@ -138,10 +142,5 @@ void BitcoinExchange::output(const char *input)
             else
                 std::cerr << "Error: bad input => " << line << std::endl;
         } 
-        else
-            std::cerr << "Error: bad input => " << line << std::endl;
     }
-
-    file.close();
 }
-

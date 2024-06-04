@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/28 10:42:09 by lboudjem          #+#    #+#              #
-#    Updated: 2024/05/28 10:42:33 by lboudjem         ###   ########.fr        #
+#    Updated: 2024/05/29 14:04:58 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 HEADER	= easyfind.hpp
 
 $(NAME): $(OBJS) $(HEADER)
-	@$(CC) $(OBJS) -o $(NAME)
+	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
 all:	$(NAME)
 

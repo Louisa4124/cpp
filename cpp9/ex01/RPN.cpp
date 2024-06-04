@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:37:39 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/04 12:42:53 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:03:34 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ int apply_operator(char c, int a, int b)
     else if (c == '/')
     {
         if (b == 0)
-            throw std::runtime_error("Error : division by zero");
+            throw std::runtime_error("Error : Division by zero");
         return (a / b);
     }
     else
-        throw std::invalid_argument("Error");
+        throw std::invalid_argument("Error: Unknown character");
 }
 
 void RPN(std::string str)
@@ -46,6 +46,8 @@ void RPN(std::string str)
 
     while (iss >> token) 
     {
+        if (token.size() != 1)
+            throw std::runtime_error("Error: invalid input: " + token);
         if (std::isdigit(token[0])) 
         {
             std::stringstream ss(token);
@@ -55,7 +57,7 @@ void RPN(std::string str)
         }
         else if (is_operator(token[0])){
             if (stack.size() < 2)
-                throw std::runtime_error("Error");
+                throw std::runtime_error("Error: Missing operand");
             int b = stack.top();
             stack.pop();
             int a = stack.top();
@@ -67,9 +69,5 @@ void RPN(std::string str)
     if (stack.size() == 1) 
         std::cout << stack.top() << std::endl;
     else 
-        throw std::runtime_error("Error");
+        throw std::runtime_error("Error: Too much operators");
 }
-
-
-
-

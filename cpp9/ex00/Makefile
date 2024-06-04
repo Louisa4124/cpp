@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/04 10:56:48 by lboudjem          #+#    #+#              #
-#    Updated: 2024/06/04 10:57:29 by lboudjem         ###   ########.fr        #
+#    Updated: 2024/06/04 15:26:18 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 HEADER	= BitcoinExchange.hpp
 
 $(NAME): $(OBJS) $(HEADER)
-	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
+	$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
 all:	$(NAME)
 

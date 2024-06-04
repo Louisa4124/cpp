@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 10:58:24 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/04 14:25:14 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/04 15:40:04 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,13 @@ class BitcoinExchange
 {
     private:
         std::map<std::string, double>   _data_content;
-        std::map<std::string, double>   _input_content;
+        
+        BitcoinExchange(const BitcoinExchange &cpy);
+        BitcoinExchange &operator=(const BitcoinExchange &cpy);
         
     public:
     	BitcoinExchange();
-        BitcoinExchange(const BitcoinExchange &cpy);
         ~BitcoinExchange();
-
-        BitcoinExchange &operator=(const BitcoinExchange &cpy);
 
         bool    isValidDate(const std::string& date);
         void    output(const char *input);

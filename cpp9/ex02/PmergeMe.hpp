@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 12:56:44 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/03 14:28:35 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/04 16:16:32 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ T   extract_max(const T& numbers)
     for (size_t i = 0; i + 1 < numbers.size(); i += 2)
         max_numbers.push_back(std::max(numbers[i], numbers[i + 1]));
 
-    if (numbers.size() % 2 != 0) 
-        max_numbers.push_back(numbers.back());
+    // if (numbers.size() % 2 != 0) 
+    //     max_numbers.push_back(numbers.back());
     
     return (max_numbers);
 }

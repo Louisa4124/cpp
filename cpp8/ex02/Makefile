@@ -6,7 +6,7 @@
 #    By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/28 11:57:59 by lboudjem          #+#    #+#              #
-#    Updated: 2024/05/28 11:58:31 by lboudjem         ###   ########.fr        #
+#    Updated: 2024/05/29 14:05:08 by lboudjem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 HEADER	= MutantStack.hpp
 
 $(NAME): $(OBJS) $(HEADER)
-	@$(CC) $(OBJS) -o $(NAME)
+	@$(CC) $(OBJS) $(FLAGS) -o $(NAME)
 
 all:	$(NAME)
 
