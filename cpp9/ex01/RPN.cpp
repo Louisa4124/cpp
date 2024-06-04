@@ -6,7 +6,7 @@
 /*   By: lboudjem <lboudjem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/03 14:37:39 by lboudjem          #+#    #+#             */
-/*   Updated: 2024/06/03 15:36:06 by lboudjem         ###   ########.fr       */
+/*   Updated: 2024/06/04 12:42:53 by lboudjem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ int apply_operator(char c, int a, int b)
     else if (c == '*')
         return (a * b);
     else if (c == '/')
+    {
+        if (b == 0)
+            throw std::runtime_error("Error : division by zero");
         return (a / b);
+    }
     else
         throw std::invalid_argument("Error");
 }
